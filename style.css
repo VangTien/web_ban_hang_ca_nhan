@@ -1,0 +1,98 @@
+.ms-icon {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 14px);
+    grid-template-rows: repeat(2, 14px);
+    gap: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .ms-square {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+  
+  .ms-square.red { background-color: #f25022; }
+  .ms-square.green { background-color: #7fba00; }
+  .ms-square.blue { background-color: #00a4ef; }
+  .ms-square.yellow { background-color: #ffb900; }
+  
+/* Dành cho phần thẻ sản phẩm (giữ nguyên màu tím nếu muốn) */
+.check-list-item .check-icon {
+    color: #a020f0 !important;
+    font-weight: bold;
+  }
+  
+  /* Dành riêng cho phần trong modal */
+  .modal-content .check-icon {
+    color: #00a4ef;
+    font-weight: bold;
+  }
+
+  .brutalist-button {
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    width: auto; /* không cố định chiều rộng */
+    max-width: 100%;
+  }
+  
+  .card {
+    margin-top: 16px;  /* khoảng cách giữa nút và card */
+    box-shadow: 6px 6px 0 #05060f;
+    padding: 1.5rem 1.8rem; /* tăng padding cho thoáng */
+    border-radius: 1rem;
+  }
+  
+  .pricing-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  .pricing-plan {
+    font-size: 1.8rem; /* làm to hơn */
+    font-weight: 700;
+  }
+  
+  .pricing-note {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007acc;
+    margin-bottom: 12px;
+  }
+  
+  .check-list {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 18px;
+    list-style: none;
+  }
+  
+  .check-list-item {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .check-icon {
+    color: #007acc;
+    margin-right: 8px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+
+  

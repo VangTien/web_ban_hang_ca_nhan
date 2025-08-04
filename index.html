@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nguyễn Văng Ngọc Tiến</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -282,19 +283,30 @@
   <!-- Thẻ sản phẩm -->
   <div class="card">
     <div class="pricing-block-content">
-      <p class="pricing-plan">Microsoft Office</p>
+      <p class="pricing-plan">
+        <span class="ms-icon">
+          <span class="ms-square red"></span>
+          <span class="ms-square green"></span>
+          <span class="ms-square blue"></span>
+          <span class="ms-square yellow"></span>
+        </span>
+        Microsoft Office
+      </p>      
       <div class="pricing-note">Tất cả các gói phiên bản Office</div>
-      <div class="price" style="color: green;">Giá: 50 VNĐ</div>
+      <div class="price" style="color: #28a745;">Giá: 50.000 VNĐ</div>
       
       <ul class="check-list">
-        <li class="check-list-item">✔ Trọn bộ phần mềm Microsoft Office</li>
-        <li class="check-list-item">✔ Dùng vĩnh viễn</li>
-        <li class="check-list-item">✔ Cài đặt 1 máy</li>
-        <li class="check-list-item">✔ Hỗ trợ cài đặt và bảo hành</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Trọn bộ phần mềm Microsoft Office</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Dùng vĩnh viễn</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Cài đặt 1 máy</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Hỗ trợ cài đặt và bảo hành</li>
       </ul>
-
-      <div class="buy-button" onclick="openModal()">👁 Xem các phần mềm Office</div>
-      <a href="https://zalo.me/123456789" target="_blank" class="contact-button">💬 Liên hệ</a>
+      
+      <div class="buy-button" onclick="openModal()">📄 Xem các phần mềm Office</div>
+      <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+        Liên hệ ngay
+      </a>      
     </div>
   </div>
 
@@ -304,19 +316,56 @@
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h2>Các phần mềm Office</h2>
       <ul>
-        <li>✔ Microsoft Word</li>
-        <li>✔ Microsoft Excel</li>
-        <li>✔ Microsoft PowerPoint</li>
-        <li>✔ Microsoft Outlook</li>
-        <li>✔ Microsoft Publisher</li>
-        <li>✔ Microsoft Access</li>
-        <li>✔ Microsoft OneNote</li>
-        <li>✔ Microsoft Teams / Skype for Business</li>
-        <li>✔ Hỗ trợ cả phiên bản 32bit và 64bit</li>
-        <li>✔ Kích hoạt bản quyền vĩnh viễn</li>
-      </ul>
+        <li><span class="check-icon">✔</span> Microsoft Word</li>
+        <li><span class="check-icon">✔</span> Microsoft Excel</li>
+        <li><span class="check-icon">✔</span> Microsoft PowerPoint</li>
+        <li><span class="check-icon">✔</span> Microsoft Outlook</li>
+        <li><span class="check-icon">✔</span> Microsoft Publisher</li>
+        <li><span class="check-icon">✔</span> Microsoft Access</li>
+        <li><span class="check-icon">✔</span> Microsoft OneNote</li>
+        <li><span class="check-icon">✔</span> Microsoft Teams / Skype for Business</li>
+        <li><span class="check-icon">✔</span> Hỗ trợ cả phiên bản 32bit và 64bit</li>
+        <li><span class="check-icon">✔</span> Kích hoạt bản quyền vĩnh viễn</li>
+      </ul>      
     </div>
   </div>
+  
+  <!-- Nút Locket Gold 💛 -->
+  <button class="brutalist-button">
+    <div class="button-text" style="flex-direction: row;">
+      <span style="margin-right: 4px;">Locket</span>
+      <span>Gold 💛</span>
+    </div>
+  </button>
+  
+
+  <!-- Thẻ sản phẩm Locket Gold -->
+  <div class="card">
+    <div class="pricing-block-content">
+      <p class="pricing-plan">Locket Gold 💛</p>
+      <div class="pricing-note">Mở khoá tất cả tính năng cao cấp</div>
+      <div class="price" style="color: #007acc; font-weight: bold; line-height: 1.5;">
+        <div>Giá: 15.000 VNĐ / Tháng</div>
+        <div>Giá: 50.000 VNĐ / Vĩnh viễn</div>
+      </div>
+      
+
+      <ul class="check-list">
+        <li class="check-list-item"><span class="check-icon">✔</span> Up ảnh & video không giới hạn từ thư viện hoặc quay trực tiếp</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Mở khoá full hiệu ứng, filter & khung độc quyền</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Tùy chỉnh widget cá nhân & cài đặt nâng cao cực xịn</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Không quảng cáo, dùng mượt mà hơn hẳn</li>
+        <li class="check-list-item"><span class="check-icon">✔</span> Biết ai xem ảnh & tương tác với bạn luôn</li>
+      </ul>
+
+      <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+        Liên hệ ngay
+      </a>      
+    </div>
+  </div>
+
+
 
   <!-- Script -->
   <script>
