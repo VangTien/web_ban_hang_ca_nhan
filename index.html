@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nguyễn Văng Ngọc Tiến</title>
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -264,8 +264,22 @@
     }
   </style>
 </head>
-<body>
+<script>
+  window.addEventListener("load", () => {
+    const splash = document.getElementById("splash-screen");
 
+    setTimeout(() => {
+      splash.style.opacity = "0"; // Làm mờ dần
+      setTimeout(() => splash.style.display = "none", 500); // Ẩn hẳn sau khi transition hoàn tất
+    }, 2800); // 2.8 giây
+  });
+</script>
+<body>
+  <!-- Splash screen -->
+  <div id="splash-screen">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <dotlottie-wc src="https://lottie.host/1e913ba4-36aa-4b3e-8e5d-70b8472118df/15QhNB58mq.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
+  </div>
   <!-- Nút Microsoft -->
   <button class="brutalist-button">
     <div class="ms-logo">
@@ -390,5 +404,3 @@
   © Nguyễn Văng Ngọc Tiến | Zippipkak. All rights reserved.
 </footer>
 </html>
-
-
