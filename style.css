@@ -18,15 +18,13 @@
   .ms-square.blue { background-color: #00a4ef; }
   .ms-square.yellow { background-color: #ffb900; }
   
-/* ✅ Mặc định: dấu tích tím cho các phần bên ngoài modal */
 .check-icon {
-  color: #a020f0 !important;  /* màu tím */
+  color: #a020f0 !important; 
   font-weight: bold;
   margin-right: 8px;
   flex-shrink: 0;
 }
 
-/* ✅ Trong modal: dùng màu xanh */
 .modal .check-icon {
   color: #00a4ef !important;
 }
@@ -40,14 +38,14 @@
     gap: 6px;
     padding: 12px 24px;
     font-size: 1.1rem;
-    width: auto; /* không cố định chiều rộng */
+    width: auto; 
     max-width: 100%;
   }
   
   .card {
-    margin-top: 16px;  /* khoảng cách giữa nút và card */
+    margin-top: 16px;  
     box-shadow: 6px 6px 0 #05060f;
-    padding: 1.5rem 1.8rem; /* tăng padding cho thoáng */
+    padding: 1.5rem 1.8rem; 
     border-radius: 1rem;
   }
   
@@ -58,7 +56,7 @@
   }
   
   .pricing-plan {
-    font-size: 1.8rem; /* làm to hơn */
+    font-size: 1.8rem; 
     font-weight: 700;
   }
   
@@ -112,7 +110,7 @@
   dotlottie-wc {
     width: 300px;
     height: 300px;
-    image-rendering: crisp-edges; /* Giúp giữ nét khi ảnh phóng to */
+    image-rendering: crisp-edges; 
   }
 
   #info-button {
@@ -178,7 +176,6 @@
     filter: brightness(1.2);
   }
   
-  /* Menu chọn thiết bị (ẩn mặc định) */
   #layout-menu {
     display: none;
     margin-top: 10px;
@@ -192,27 +189,24 @@
     gap: 8px;
   }
   
-  /* Khi có class .show thì hiện menu */
   #layout-menu.show {
     display: flex;
   }
   
   
-  /* Giao diện Desktop */
   body.layout-desktop .card-container {
     display: flex;
-    flex-wrap: wrap;            /* Cho phép xuống dòng */
-    justify-content: center;    /* Căn giữa các thẻ */
-    gap: 20px;                  /* Khoảng cách giữa các thẻ */
+    flex-wrap: wrap;            
+    justify-content: center;   
+    gap: 20px;                 
     padding: 20px;
   }  
     
   body.layout-desktop .card {
-    flex: 1 1 300px;       /* Thẻ co dãn linh hoạt, min 300px */
-    max-width: 320px;      /* Không vượt quá 320px */
+    flex: 1 1 300px;       
+    max-width: 320px;      
   }  
   
-  /* Giao diện Tablet / iPad */
   body.layout-tablet .card-container {
     flex-direction: row;
   }  
