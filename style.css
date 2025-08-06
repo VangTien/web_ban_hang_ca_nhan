@@ -18,18 +18,20 @@
   .ms-square.blue { background-color: #00a4ef; }
   .ms-square.yellow { background-color: #ffb900; }
   
-/* Dành cho phần thẻ sản phẩm (giữ nguyên màu tím nếu muốn) */
-.check-list-item .check-icon {
-    color: #a020f0 !important;
-    font-weight: bold;
-  }
-  
-  /* Dành riêng cho phần trong modal */
-  .modal-content .check-icon {
-    color: #00a4ef;
-    font-weight: bold;
-  }
+/* ✅ Mặc định: dấu tích tím cho các phần bên ngoài modal */
+.check-icon {
+  color: #a020f0 !important;  /* màu tím */
+  font-weight: bold;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
 
+/* ✅ Trong modal: dùng màu xanh */
+.modal .check-icon {
+  color: #00a4ef !important;
+}
+
+  
   .brutalist-button {
     margin-top: 20px;
     display: inline-flex;
@@ -112,6 +114,167 @@
     height: 300px;
     image-rendering: crisp-edges; /* Giúp giữ nét khi ảnh phóng to */
   }
+
+  #info-button {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #007acc, #00a4ef);
+    color: white;
+    font-size: 22px;
+    font-family: 'Segoe UI', 'Arial Rounded MT Bold', sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 164, 239, 0.6);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  #info-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 164, 239, 0.8);
+  }
+  
+  #info-button.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #layout-switcher {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+  }
+  
+  #layout-switcher button {
+    width: 42px;
+    height: 42px;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 6px;
+    box-shadow: 3px 3px 0 #00a4ef;
+    transition: transform 0.2s ease;
+  }
+  
+  #layout-switcher button:hover {
+    transform: scale(1.1);
+    background-color: #111;
+  }
+  
+  #layout-switcher button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1.2);
+  }
+  
+  /* Menu chọn thiết bị (ẩn mặc định) */
+  #layout-menu {
+    display: none;
+    margin-top: 10px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    gap: 8px;
+  }
+  
+  /* Khi có class .show thì hiện menu */
+  #layout-menu.show {
+    display: flex;
+  }
+  
+  
+  /* Giao diện Desktop */
+  body.layout-desktop .card-container {
+    display: flex;
+    flex-wrap: wrap;            /* Cho phép xuống dòng */
+    justify-content: center;    /* Căn giữa các thẻ */
+    gap: 20px;                  /* Khoảng cách giữa các thẻ */
+    padding: 20px;
+  }  
+    
+  body.layout-desktop .card {
+    flex: 1 1 300px;       /* Thẻ co dãn linh hoạt, min 300px */
+    max-width: 320px;      /* Không vượt quá 320px */
+  }  
+  
+  /* Giao diện Tablet / iPad */
+  body.layout-tablet .card-container {
+    flex-direction: row;
+  }  
+  
+  body.layout-tablet .card {
+    flex: 1 1 calc(50% - 40px);
+    max-width: 400px;
+  }
+  
+  /* Giao diện Mobile */
+  body.layout-mobile .card-container {
+    flex-direction: column;
+    align-items: center;
+  }  
+  
+  body.layout-mobile .card {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  @media (max-width: 600px) {
+    .brutalist-button {
+      font-size: 0.95rem;
+      padding: 10px 20px;
+    }
+    .pricing-plan {
+      font-size: 1.4rem;
+    }
+  }
+
+  body.layout-mobile .card {
+    border-radius: 18px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 50px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  .product-header-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
+  
+  
   
   
   
