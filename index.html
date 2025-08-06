@@ -267,119 +267,131 @@
 <script>
   window.addEventListener("load", () => {
     const splash = document.getElementById("splash-screen");
-
+    const infoBtn = document.getElementById("info-button");
+  
     setTimeout(() => {
-      splash.style.opacity = "0"; // Làm mờ dần
-      setTimeout(() => splash.style.display = "none", 500); // Ẩn hẳn sau khi transition hoàn tất
-    }, 3000); // 3 giây
-  });
+      splash.style.opacity = "0";
+      setTimeout(() => {
+        splash.style.display = "none";
+        infoBtn.classList.add("show"); // hiện nút "i"
+      }, 500);
+    }, 2800);
+  });  
 </script>
+<!-- Nút chữ "i" góc phải -->
+<a href="https://bio.link/tinngcxv" target="_blank" id="info-button" title="Thông tin tác giả">i</a>
 <body>
   <!-- Splash screen -->
   <div id="splash-screen">
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
     <dotlottie-wc src="https://lottie.host/1e913ba4-36aa-4b3e-8e5d-70b8472118df/15QhNB58mq.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
   </div>
-  <!-- Nút Microsoft -->
-  <button class="brutalist-button">
-    <div class="ms-logo">
-      <div class="ms-logo-square"></div>
-      <div class="ms-logo-square"></div>
-      <div class="ms-logo-square"></div>
-      <div class="ms-logo-square"></div>
+<!-- Container chứa toàn bộ sản phẩm -->
+<div class="card-container">
+  <!-- ==== Sản phẩm Microsoft Office ==== -->
+  <div class="product-item">
+    <div class="product-header-button">
+      <button class="brutalist-button">
+        <div class="ms-logo">
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+        </div>
+        <div class="button-text">
+          <span>Microsoft</span>
+          <span>Office</span>
+        </div>
+      </button>
     </div>
-    <div class="button-text">
-      <span>Microsoft</span>
-      <span>Office</span>
-    </div>
-  </button>
 
-  <!-- Thẻ sản phẩm -->
-  <div class="card">
-    <div class="pricing-block-content">
-      <p class="pricing-plan">
-        <span class="ms-icon">
-          <span class="ms-square red"></span>
-          <span class="ms-square green"></span>
-          <span class="ms-square blue"></span>
-          <span class="ms-square yellow"></span>
-        </span>
-        Microsoft Office
-      </p>      
-      <div class="pricing-note">Tất cả các gói phiên bản Office</div>
-      <div class="price" style="color: #28a745;">Giá: 50.000 VNĐ</div>
-      
-      <ul class="check-list">
-        <li class="check-list-item"><span class="check-icon">✔</span> Trọn bộ phần mềm Microsoft Office</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Dùng vĩnh viễn</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Cài đặt 1 máy</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Hỗ trợ cài đặt và bảo hành</li>
-      </ul>
-      
-      <div class="buy-button" onclick="openModal()">📄 Xem các phần mềm Office</div>
-      <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
-        Liên hệ ngay
-      </a>      
-    </div>
-  </div>
+    <div class="card">
+      <div class="pricing-block-content">
+        <p class="pricing-plan">
+          <span class="ms-icon">
+            <span class="ms-square red"></span>
+            <span class="ms-square green"></span>
+            <span class="ms-square blue"></span>
+            <span class="ms-square yellow"></span>
+          </span>
+          Microsoft Office
+        </p>
+        <div class="pricing-note">Tất cả các gói phiên bản Office</div>
+        <div class="price" style="color: #28a745;">Giá: 50.000 VNĐ</div>
 
-  <!-- Modal -->
-  <div class="modal" id="officeModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h2>Các phần mềm Office</h2>
-      <ul>
-        <li><span class="check-icon">✔</span> Microsoft Word</li>
-        <li><span class="check-icon">✔</span> Microsoft Excel</li>
-        <li><span class="check-icon">✔</span> Microsoft PowerPoint</li>
-        <li><span class="check-icon">✔</span> Microsoft Outlook</li>
-        <li><span class="check-icon">✔</span> Microsoft Publisher</li>
-        <li><span class="check-icon">✔</span> Microsoft Access</li>
-        <li><span class="check-icon">✔</span> Microsoft OneNote</li>
-        <li><span class="check-icon">✔</span> Microsoft Teams / Skype for Business</li>
-        <li><span class="check-icon">✔</span> Hỗ trợ cả phiên bản 32bit và 64bit</li>
-        <li><span class="check-icon">✔</span> Kích hoạt bản quyền vĩnh viễn</li>
-      </ul>      
-    </div>
-  </div>
-  
-  <!-- Nút Locket Gold 💛 -->
-  <button class="brutalist-button">
-    <div class="button-text" style="flex-direction: row;">
-      <span style="margin-right: 4px;">Locket</span>
-      <span>Gold 💛</span>
-    </div>
-  </button>
-  
+        <ul class="check-list">
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Trọn bộ phần mềm Microsoft Office</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Dùng vĩnh viễn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Cài đặt 1 máy</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Hỗ trợ cài đặt và bảo hành</li>
+        </ul>
 
-  <!-- Thẻ sản phẩm Locket Gold -->
-  <div class="card">
-    <div class="pricing-block-content">
-      <p class="pricing-plan">Locket Gold 💛</p>
-      <div class="pricing-note">Mở khoá tất cả tính năng cao cấp</div>
-      <div class="price" style="color: #007acc; font-weight: bold; line-height: 1.5;">
-        <div>Giá: 15.000 VNĐ / Tháng</div>
-        <div>Giá: 50.000 VNĐ / Vĩnh viễn</div>
+        <div class="buy-button" onclick="openModal()">📄 Xem các phần mềm Office</div>
+        <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+          Liên hệ ngay
+        </a>
       </div>
-      
-
-      <ul class="check-list">
-        <li class="check-list-item"><span class="check-icon">✔</span> Up ảnh & video không giới hạn từ thư viện hoặc quay trực tiếp</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Mở khoá full hiệu ứng, filter & khung độc quyền</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Tùy chỉnh widget cá nhân & cài đặt nâng cao cực xịn</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Không quảng cáo, dùng mượt mà hơn hẳn</li>
-        <li class="check-list-item"><span class="check-icon">✔</span> Biết ai xem ảnh & tương tác với bạn luôn</li>
-      </ul>
-
-      <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
-        Liên hệ ngay
-      </a>      
     </div>
   </div>
 
-  
+  <!-- ==== Sản phẩm Locket Gold ==== -->
+  <div class="product-item">
+    <div class="product-header-button">
+      <button class="brutalist-button">
+        <div class="button-text" style="flex-direction: row;">
+          <span style="margin-right: 4px;">Locket</span>
+          <span>Gold 💛</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="pricing-block-content">
+        <p class="pricing-plan">Locket Gold 💛</p>
+        <div class="pricing-note">Mở khoá tất cả tính năng cao cấp</div>
+        <div class="price" style="color: #007acc; font-weight: bold; line-height: 1.5;">
+          <div>Giá: 15.000 VNĐ / Tháng</div>
+          <div>Giá: 50.000 VNĐ / Vĩnh viễn</div>
+        </div>
+
+        <ul class="check-list">
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Up ảnh & video không giới hạn từ thư viện hoặc quay trực tiếp</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Mở khoá full hiệu ứng, filter & khung độc quyền</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Tùy chỉnh widget cá nhân & cài đặt nâng cao cực xịn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Không quảng cáo, dùng mượt mà hơn hẳn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Biết ai xem ảnh & tương tác với bạn luôn</li>
+        </ul>
+
+        <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+          Liên hệ ngay
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Microsoft Office -->
+<div class="modal" id="officeModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Các phần mềm Office</h2>
+    <ul>
+      <li><span class="check-icon">&#10004;</span> Microsoft Word</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Excel</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft PowerPoint</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Outlook</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Publisher</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Access</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft OneNote</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Teams / Skype for Business</li>
+      <li><span class="check-icon">&#10004;</span> Hỗ trợ cả phiên bản 32bit và 64bit</li>
+      <li><span class="check-icon">&#10004;</span> Kích hoạt bản quyền vĩnh viễn</li>
+    </ul>
+  </div>
+</div>
+
   <!-- Script -->
   <script>
     function openModal() {
@@ -398,10 +410,60 @@
     }
   </script>
 
+<!-- Layout switcher: Nút Settings + Menu -->
+<div id="layout-switcher">
+  <!-- Nút mở menu -->
+  <button id="layout-toggle" title="Chọn bố cục hiển thị">
+    <img src="https://cdn-icons-png.flaticon.com/512/18025/18025717.png" alt="Settings" />
+  </button>
+
+  <!-- Menu chọn thiết bị (ẩn ban đầu) -->
+  <div id="layout-menu">
+    <button onclick="setLayout('desktop')" title="Máy tính">
+      <img src="https://cdn-icons-png.flaticon.com/512/3474/3474362.png" alt="PC" />
+    </button>
+    <button onclick="setLayout('tablet')" title="Tablet / iPad">
+      <img src="https://cdn-icons-png.flaticon.com/512/1474/1474208.png" alt="Tablet" />
+    </button>
+    <button onclick="setLayout('mobile')" title="Điện thoại">
+      <img src="https://cdn-icons-png.flaticon.com/512/15713/15713722.png" alt="Phone" />
+    </button>
+  </div>
+</div>
+</div>
+<script>
+  // Toggle hiển thị menu khi nhấn nút cài đặt
+  document.getElementById("layout-toggle").addEventListener("click", () => {
+    document.getElementById("layout-menu").classList.toggle("show");
+  });
+
+  // Khi chọn thiết bị → áp dụng bố cục và ẩn menu
+  function setLayout(layout) {
+    document.body.classList.remove('layout-desktop', 'layout-tablet', 'layout-mobile');
+    document.body.classList.add(`layout-${layout}`);
+
+    // Ẩn menu sau khi chọn
+    document.getElementById("layout-menu").classList.remove("show");
+  }
+</script>
+<script>
+  // Auto detect layout theo thiết bị khi mở trang
+  window.addEventListener('DOMContentLoaded', () => {
+    const isMobile = /iPhone|Android.+Mobile|iPod/i.test(navigator.userAgent);
+    const isTablet = /iPad|Tablet|Android(?!.*Mobile)/i.test(navigator.userAgent);
+    const isDesktop = !isMobile && !isTablet;
+
+    if (isDesktop) {
+      setLayout('desktop');
+    } else if (isTablet) {
+      setLayout('tablet');
+    } else {
+      setLayout('mobile');
+    }
+  });
+</script>
 </body>
 <footer style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #333;">
   © Nguyễn Văng Ngọc Tiến | Zippipkak. All rights reserved.
 </footer>
 </html>
-
-
