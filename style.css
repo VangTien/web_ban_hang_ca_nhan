@@ -18,17 +18,21 @@
   .ms-square.blue { background-color: #00a4ef; }
   .ms-square.yellow { background-color: #ffb900; }
   
-.check-icon {
-  color: #a020f0 !important; 
-  font-weight: bold;
-  margin-right: 8px;
-  flex-shrink: 0;
-}
-
-.modal .check-icon {
-  color: #00a4ef !important;
-}
-
+  .check-icon {
+    font-weight: bold;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  
+  .check-icon::before {
+    content: "⬤"; /* ký hiệu tròn đặc */
+    font-size: 0.8em;
+  }
+  
+  /* Màu tròn cho từng sản phẩm */
+  .product-item:first-child .check-icon::before { color: #28a745; } /* Microsoft Office: xanh lá */
+  .product-item:nth-child(2) .check-icon::before { color: gold; }   /* Locket Gold: vàng */
+  .product-item:nth-child(3) .check-icon::before { color: orange; } /* Trợ lý tối ưu: cam */
   
   .brutalist-button {
     margin-top: 20px;
@@ -87,13 +91,6 @@
     align-items: center;
   }
   
-  .check-icon {
-    color: #007acc;
-    margin-right: 8px;
-    font-weight: bold;
-    flex-shrink: 0;
-  }
-
   #splash-screen {
     position: fixed;
     top: 0; left: 0;
@@ -389,6 +386,33 @@
     vertical-align: middle;
   }
 }
+
+/* Nút Microsoft Office */
+.product-item:first-child .product-header-button .button-text {
+  font-size: 2.2em; /* chữ to rõ ràng */
+}
+
+/* Nút Locket Gold */
+.product-item:nth-child(2) .product-header-button .button-text {
+  font-size: 2.2em; /* chữ to rõ ràng */
+}
+
+.check-list-item {
+  position: relative;
+  padding-left: 20px; /* chừa khoảng trống cho dấu chấm */
+}
+
+.check-list-item::before {
+  content: "⬤";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #7b2cbf; /* tím công nghệ đậm */
+  font-size: 0.9em; /* to hơn một chút */
+  line-height: 1.6;
+}
+
+
 
 
 
