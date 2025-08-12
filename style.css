@@ -403,14 +403,16 @@
 }
 
 .check-list-item::before {
-  content: "⬤";
+  content: "\2B24"; /* mã Unicode của dấu ⬤ */
   position: absolute;
   left: 0;
   top: 0;
   color: #7b2cbf; /* tím công nghệ đậm */
-  font-size: 0.9em;
+  font-family: Arial, sans-serif; /* ép font hỗ trợ ký hiệu */
+  font-size: 0.9em; /* to hơn một chút */
   line-height: 1.6;
 }
+
 
 
 
