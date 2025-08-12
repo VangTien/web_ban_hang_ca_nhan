@@ -1,0 +1,411 @@
+.ms-icon {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 14px);
+    grid-template-rows: repeat(2, 14px);
+    gap: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .ms-square {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+  
+  .ms-square.red { background-color: #f25022; }
+  .ms-square.green { background-color: #7fba00; }
+  .ms-square.blue { background-color: #00a4ef; }
+  .ms-square.yellow { background-color: #ffb900; }
+  
+.check-icon {
+  color: #a020f0 !important; 
+  font-weight: bold;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.modal .check-icon {
+  color: #00a4ef !important;
+}
+
+  
+  .brutalist-button {
+    margin-top: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    width: auto; 
+    max-width: 100%;
+  }
+  
+  .card {
+    margin-top: 16px;  
+    box-shadow: 6px 6px 0 #05060f;
+    padding: 1.5rem 1.8rem; 
+    border-radius: 1rem;
+  }
+  
+  .pricing-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  .pricing-plan {
+    font-size: 1.8rem; 
+    font-weight: 700;
+  }
+  
+  .pricing-note {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007acc;
+    margin-bottom: 12px;
+  }
+  
+  .check-list {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 18px;
+    list-style: none;
+  }
+  
+  .check-list-item {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .check-icon {
+    color: #007acc;
+    margin-right: 8px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  #splash-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  dotlottie-wc {
+    width: 300px;
+    height: 300px;
+    image-rendering: crisp-edges; 
+  }
+
+  #info-button {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #007acc, #00a4ef);
+    color: white;
+    font-size: 22px;
+    font-family: 'Segoe UI', 'Arial Rounded MT Bold', sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 164, 239, 0.6);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  #info-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 164, 239, 0.8);
+  }
+  
+  #info-button.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #layout-switcher {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+  }
+  
+  #layout-switcher button {
+    width: 42px;
+    height: 42px;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 6px;
+    box-shadow: 3px 3px 0 #00a4ef;
+    transition: transform 0.2s ease;
+  }
+  
+  #layout-switcher button:hover {
+    transform: scale(1.1);
+    background-color: #111;
+  }
+  
+  #layout-switcher button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1.2);
+  }
+  
+  #layout-menu {
+    display: none;
+    margin-top: 10px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    gap: 8px;
+  }
+  
+  #layout-menu.show {
+    display: flex;
+  }
+  
+  
+  body.layout-desktop .card-container {
+    display: flex;
+    flex-wrap: wrap;            
+    justify-content: center;   
+    gap: 20px;                 
+    padding: 20px;
+  }  
+    
+  body.layout-desktop .card {
+    flex: 1 1 300px;       
+    max-width: 320px;      
+  }  
+  
+  body.layout-tablet .card-container {
+    flex-direction: row;
+  }  
+  
+  body.layout-tablet .card {
+    flex: 1 1 calc(50% - 40px);
+    max-width: 400px;
+  }
+  
+  /* Giao diện Mobile */
+  body.layout-mobile .card-container {
+    flex-direction: column;
+    align-items: center;
+  }  
+  
+  body.layout-mobile .card {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  @media (max-width: 600px) {
+    body.layout-mobile .card {
+      width: 90%;          /* thu hẹp bớt để không chiếm tràn màn hình */
+      max-width: 350px;    /* giới hạn chiều rộng tối đa */
+      padding: 1rem;       /* giảm khoảng đệm bên trong */
+      margin: auto;        /* căn giữa card */
+    }
+  
+    .pricing-plan {
+      font-size: 1.4rem;   /* thu nhỏ chữ tiêu đề cho vừa */
+      line-height: 1.2;
+    }
+  
+    .pricing-plan img {
+      height: 32px;        /* icon nhỏ hơn để không bị đẩy text */
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  }
+  
+  body.layout-mobile .card {
+    border-radius: 18px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 50px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  .product-header-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .product-header-button .brutalist-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Không cho xuống dòng */
+    padding: 8px 14px;   /* tăng khoảng đệm */
+  }
+  
+  .product-header-button .button-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap; /* Giữ nguyên dòng */
+  }
+  
+  .product-header-button img {
+    width: 26px;
+    height: 26px;
+    margin-right: 8px;
+  }
+  
+/* --- Tăng kích thước thẻ trên desktop để tránh ngắt chữ --- */
+@media (min-width: 900px) {
+  body.layout-desktop .card {
+    flex: 0 1 440px;    /* kích thước cơ bản */
+    max-width: 480px;   /* tăng tối đa để tiêu đề có chỗ */
+    padding: 2rem;
+  }
+  .pricing-plan {
+    font-size: 1.9rem;  /* thu nhỏ chút để không quá chiếm chỗ */
+    line-height: 1.05;
+  }
+  .price { font-size: 1.18rem; }
+}
+.check-list-item { line-height: 1.45; } /* đọc dễ hơn */
+
+.product-header-button .brutalist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;               /* khoảng cách giữa icon và chữ */
+  padding: 12px 24px;      /* nút rộng và thoáng */
+  font-size: 1.2em;        /* chữ to vừa phải */
+  border: 3px solid #fff;  /* viền trắng rõ nét */
+  background-color: #000;  /* nền đen */
+  border-radius: 10px;     /* bo góc mềm mại */
+  box-shadow: 4px 4px 0px #00aaff; /* đổ bóng kiểu brutalist */
+}
+
+.product-header-button img {
+  width: 40px;   /* icon vừa vặn */
+  height: 40px;
+}
+
+.product-header-button .button-text {
+  font-weight: bold;
+  white-space: nowrap;
+  color: white;
+}
+
+.product-header-button .brutalist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 32px;   /* tăng padding nhiều hơn */
+  font-size: 1.3em;     /* chữ to hơn một chút */
+  min-width: 280px;     /* tăng chiều rộng */
+  min-height: 80px;     /* tăng chiều cao nhiều hơn */
+  box-sizing: border-box;
+}
+
+.product-header-button img {
+  width: 48px;   /* icon to hơn nữa */
+  height: 48px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.product-header-button img {
+  width: 60px; /* kích thước icon ban đầu */
+  height: 60px;
+  transition: transform 0.3s ease; /* mượt khi phóng to */
+}
+
+.product-header-button:hover img {
+  transform: scale(1.2); /* phóng to 20% khi hover */
+}
+
+/* Khắc phục card bị rộng quá trên mobile */
+@media (max-width: 600px) {
+  .card-container {
+    display: flex !important;     /* dùng flex thay vì grid */
+    flex-direction: column;
+    align-items: center;          /* căn giữa tất cả card */
+    gap: 20px;
+  }
+
+  .card {
+    width: 90% !important;        /* chỉ chiếm 90% màn hình */
+    max-width: 360px !important;  /* giới hạn tối đa */
+    padding: 1rem !important;     /* giảm khoảng đệm */
+    box-sizing: border-box;       /* tính cả padding vào width */
+  }
+
+  .pricing-plan {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .pricing-plan img {
+    height: 32px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+}
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  

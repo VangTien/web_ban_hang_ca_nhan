@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nguyễn Văng Ngọc Tiến</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      flex-direction: column;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 3px solid #05060f;
+      box-shadow: 6px 6px 0 #05060f;
+      color: black;
+      transition: 0.2s ease;
+      margin-top: 20px;
+    }
+
+    .card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 #000;
+    }
+
+    .pricing-block-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .pricing-plan {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .pricing-note {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #e53935;
+    }
+
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .check-list-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    .buy-button, .contact-button {
+      margin-top: 12px;
+      background: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 3px 3px 0 #00a4ef;
+      transition: 0.2s ease;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .buy-button:hover, .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0 #000;
+      background-color: #111;
+    }
+
+    select {
+      padding: 8px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 3px solid #05060f;
+      box-shadow: 6px 6px 0 #05060f;
+      width: 90%;
+      max-width: 450px;
+      text-align: left;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-content ul {
+      padding-left: 20px;
+    }
+
+    .modal-content li {
+      margin-bottom: 6px;
+    }
+
+    .brutalist-button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: 180px;
+      height: 60px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      border: 3px solid #fff;
+      outline: 3px solid #000;
+      box-shadow: 6px 6px 0 #00a4ef;
+      transition: all 0.1s ease-out;
+      padding: 0 15px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brutalist-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+      z-index: 1;
+      opacity: 0;
+    }
+
+    @keyframes slide {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .brutalist-button:hover::before {
+      opacity: 1;
+      animation: slide 2s infinite;
+    }
+
+    .brutalist-button:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 10px 10px 0 #000;
+    }
+
+    .brutalist-button:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 #00a4ef;
+      background-color: #fff;
+      color: #000;
+      border-color: #000;
+    }
+
+    .ms-logo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brutalist-button:hover .ms-logo {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .brutalist-button:active .ms-logo {
+      transform: rotate(10deg) scale(0.9);
+    }
+
+    .ms-logo-square {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ms-logo-square:nth-child(1) { background-color: #f25022; }
+    .ms-logo-square:nth-child(2) { background-color: #7fba00; }
+    .ms-logo-square:nth-child(3) { background-color: #00a4ef; }
+    .ms-logo-square:nth-child(4) { background-color: #ffb900; }
+
+    .button-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      transition: transform 0.2s ease-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brutalist-button:hover .button-text {
+      transform: skew(-5deg);
+    }
+
+    .brutalist-button:active .button-text {
+      transform: skew(5deg);
+    }
+
+    .button-text span:first-child {
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .button-text span:last-child {
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<script>
+  window.addEventListener("load", () => {
+    const splash = document.getElementById("splash-screen");
+    const infoBtn = document.getElementById("info-button");
+  
+    setTimeout(() => {
+      splash.style.opacity = "0";
+      setTimeout(() => {
+        splash.style.display = "none";
+        infoBtn.classList.add("show"); // hiện nút "i"
+      }, 500);
+    }, 2800);
+  });  
+</script>
+<!-- Nút chữ "i" góc phải -->
+<a href="https://bio.link/tinngcxv" target="_blank" id="info-button" title="Thông tin tác giả">i</a>
+<body>
+  <!-- Splash screen -->
+  <div id="splash-screen">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <dotlottie-wc src="https://lottie.host/1e913ba4-36aa-4b3e-8e5d-70b8472118df/15QhNB58mq.lottie" style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
+  </div>
+<!-- Container chứa toàn bộ sản phẩm -->
+<div class="card-container">
+  <!-- ==== Sản phẩm Microsoft Office ==== -->
+  <div class="product-item">
+    <div class="product-header-button">
+      <button class="brutalist-button">
+        <div class="ms-logo">
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+          <div class="ms-logo-square"></div>
+        </div>
+        <div class="button-text">
+          <span style="margin-right: 6px;">Microsoft</span>
+          <span>Office</span>
+        </div>        
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="pricing-block-content">
+        <p class="pricing-plan">
+          <span class="ms-icon">
+            <span class="ms-square red"></span>
+            <span class="ms-square green"></span>
+            <span class="ms-square blue"></span>
+            <span class="ms-square yellow"></span>
+          </span>
+          Microsoft Office
+        </p>
+        <div class="pricing-note">Tất cả các gói phiên bản Office</div>
+        <div class="price" style="color: #28a745;">Giá: 50.000 VNĐ</div>
+
+        <ul class="check-list">
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Trọn bộ phần mềm Microsoft Office</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Dùng vĩnh viễn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Cài đặt 1 máy</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Hỗ trợ cài đặt và bảo hành</li>
+        </ul>
+
+        <div class="buy-button" onclick="openModal()">📄 Xem các phần mềm Office</div>
+        <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+          Liên hệ ngay
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==== Sản phẩm Locket Gold ==== -->
+  <div class="product-item">
+    <div class="product-header-button">
+      <button class="brutalist-button">
+        <div class="button-text" style="flex-direction: row;">
+          <span style="margin-right: 4px;">Locket</span>
+          <span>Gold 💛</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="pricing-block-content">
+        <p class="pricing-plan">Locket Gold 💛</p>
+        <div class="pricing-note">Mở khoá tất cả tính năng cao cấp</div>
+        <div class="price" style="color: #007acc; font-weight: bold; line-height: 1.5;">
+          <div>Giá: 15.000 VNĐ / Tháng</div>
+          <div>Giá: 50.000 VNĐ / Vĩnh viễn</div>
+        </div>
+
+        <ul class="check-list">
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Up ảnh & video không giới hạn từ thư viện hoặc quay trực tiếp</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Mở khoá full hiệu ứng, filter & khung độc quyền</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Tùy chỉnh widget cá nhân & cài đặt nâng cao cực xịn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Không quảng cáo, dùng mượt mà hơn hẳn</li>
+          <li class="check-list-item"><span class="check-icon">&#10004;</span> Biết ai xem ảnh & tương tác với bạn luôn</li>
+        </ul>
+
+        <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+          Liên hệ ngay
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Microsoft Office -->
+<div class="modal" id="officeModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Các phần mềm Office</h2>
+    <ul>
+      <li><span class="check-icon">&#10004;</span> Microsoft Word</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Excel</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft PowerPoint</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Outlook</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Publisher</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Access</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft OneNote</li>
+      <li><span class="check-icon">&#10004;</span> Microsoft Teams / Skype for Business</li>
+      <li><span class="check-icon">&#10004;</span> Hỗ trợ cả phiên bản 32bit và 64bit</li>
+      <li><span class="check-icon">&#10004;</span> Kích hoạt bản quyền vĩnh viễn</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==== Sản phẩm Trợ Lý Tối Ưu Máy Tính ==== -->
+<div class="product-item">
+  <div class="product-header-button">
+    <button class="brutalist-button">
+      <img src="icons/icon_trolymaytinh.png" alt="Icon Tối Ưu Máy Tính">
+      <div class="button-text">
+        <span>Tối Ưu Máy Tính </span>
+      </div>
+    </button>
+  </div>
+</div>
+
+  <div class="card">
+    <div class="pricing-block-content">
+      <p class="pricing-plan">
+        <img src="icons/icon_trolymaytinh.png" 
+             alt="Icon Tối Ưu Máy Tính" 
+             style="height:42px; vertical-align:middle; margin-right:10px;">
+        Trợ Lý Tối Ưu Máy Tính ⚡
+      </p>      
+      <div class="pricing-note">Dọn rác sâu – Tối ưu RAM – Kiểm tra hệ thống</div>
+      <div class="price" style="color: #ff5722; font-weight: bold; line-height: 1.5;">
+        <div>Giá: 10.000 VNĐ / 1 lần</div>
+        <div>Giá: 30.000 VNĐ / 1 tháng</div>
+      </div>
+
+      <ul class="check-list">
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Dọn rác sâu hệ thống (Temp, Prefetch, INetCache, Recycle Bin)</li>
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Xóa nhật ký sự kiện Windows</li>
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Tối ưu RAM và Registry</li>
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Kiểm tra tình trạng ổ đĩa và RAM</li>
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Giao diện đẹp, dễ sử dụng</li>
+        <li class="check-list-item"><span class="check-icon">&#10004;</span> Hỗ trợ kích hoạt nhanh qua Zalo</li>
+      </ul>
+
+      <a href="https://zalo.me/0824808982" target="_blank" class="contact-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" 
+             alt="Zalo Logo" style="height:24px; vertical-align:middle; margin-right:8px;">
+        Liên hệ mua ngay
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script>
+    function openModal() {
+      document.getElementById("officeModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("officeModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("officeModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+<!-- Layout switcher: Nút Settings + Menu -->
+<div id="layout-switcher">
+  <!-- Nút mở menu -->
+  <button id="layout-toggle" title="Chọn bố cục hiển thị">
+    <img src="https://cdn-icons-png.flaticon.com/512/18025/18025717.png" alt="Settings" />
+  </button>
+
+  <!-- Menu chọn thiết bị (ẩn ban đầu) -->
+  <div id="layout-menu">
+    <button onclick="setLayout('desktop')" title="Máy tính">
+      <img src="https://cdn-icons-png.flaticon.com/512/3474/3474362.png" alt="PC" />
+    </button>
+    <button onclick="setLayout('tablet')" title="Tablet / iPad">
+      <img src="https://cdn-icons-png.flaticon.com/512/1474/1474208.png" alt="Tablet" />
+    </button>
+    <button onclick="setLayout('mobile')" title="Điện thoại">
+      <img src="https://cdn-icons-png.flaticon.com/512/15713/15713722.png" alt="Phone" />
+    </button>
+  </div>
+</div>
+</div>
+<script>
+  // Toggle hiển thị menu khi nhấn nút cài đặt
+  document.getElementById("layout-toggle").addEventListener("click", () => {
+    document.getElementById("layout-menu").classList.toggle("show");
+  });
+
+  // Khi chọn thiết bị → áp dụng bố cục và ẩn menu
+  function setLayout(layout) {
+    document.body.classList.remove('layout-desktop', 'layout-tablet', 'layout-mobile');
+    document.body.classList.add(`layout-${layout}`);
+
+    // Ẩn menu sau khi chọn
+    document.getElementById("layout-menu").classList.remove("show");
+  }
+</script>
+<script>
+  // Auto detect layout theo thiết bị khi mở trang
+  window.addEventListener('DOMContentLoaded', () => {
+    const isMobile = /iPhone|Android.+Mobile|iPod/i.test(navigator.userAgent);
+    const isTablet = /iPad|Tablet|Android(?!.*Mobile)/i.test(navigator.userAgent);
+    const isDesktop = !isMobile && !isTablet;
+
+    if (isDesktop) {
+      setLayout('desktop');
+    } else if (isTablet) {
+      setLayout('tablet');
+    } else {
+      setLayout('mobile');
+    }
+  });
+</script>
+</body>
+<footer style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #333;">
+  © Nguyễn Văng Ngọc Tiến | Zippipkak. All rights reserved.
+</footer>
+</html>
