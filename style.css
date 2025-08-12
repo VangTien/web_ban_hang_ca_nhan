@@ -399,7 +399,7 @@
 
 .check-list-item {
   position: relative;
-  padding-left: 20px; /* chừa khoảng trống cho dấu chấm */
+  padding-left: 20px; /* chừa khoảng để dấu ⬤ không đè lên chữ */
 }
 
 .check-list-item::before {
@@ -408,9 +408,10 @@
   left: 0;
   top: 0;
   color: #7b2cbf; /* tím công nghệ đậm */
-  font-size: 0.9em; /* to hơn một chút */
+  font-size: 0.9em;
   line-height: 1.6;
 }
+
 
 
 
