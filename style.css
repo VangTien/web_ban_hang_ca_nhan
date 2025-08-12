@@ -399,7 +399,7 @@
 
 .check-list-item {
   position: relative;
-  padding-left: 20px; /* chừa khoảng để dấu ⬤ không đè lên chữ */
+  padding-left: 24px; /* chừa khoảng để dấu ⬤ không đè lên chữ */
 }
 
 .check-list-item::before {
