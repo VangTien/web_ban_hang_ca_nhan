@@ -413,6 +413,67 @@
   line-height: 1.6;
 }
 
+/* Tắt chấm của icon để tránh bị trùng */
+.card .check-list.no-dot .check-icon::before {
+  content: none !important;
+}
+
+/* Giữ layout mặc định, không dùng align-items ở đây */
+.card .check-list.no-dot .check-list-item {
+  position: relative;
+  padding-left: 1rem; /* khoảng cách từ mép tới chữ */
+}
+
+/* Chấm xanh nằm giữa dòng chữ */
+.card .check-list.no-dot .check-list-item::before {
+  content: "•";
+  color: #00a4ef;         /* xanh công nghệ */
+  font-size: 1.1em;       /* to hơn một chút */
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;   /* thẳng hàng với chữ */
+}
+
+/* Icon và chữ sát nhau hơn */
+.check-list.no-dot .check-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.25rem; /* chỉ còn khoảng 4px */
+}
+
+.check-list.no-dot .check-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Xóa chấm mặc định của ul */
+.card .check-list.no-dot {
+  list-style: none;
+}
+.check-list.no-dot .check-list-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* Không cho xuống dòng giữa icon và chữ */
+}
+
+.check-list.no-dot .check-list-item strong {
+  white-space: nowrap; /* Giữ nguyên cụm chữ không tách dòng */
+  margin-right: 0.25rem; /* khoảng cách nhỏ giữa tiêu đề và phần mô tả */
+}
+.check-list.no-dot .check-list-item strong {
+  margin-right: 0.1rem; /* ~1-2px */
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
