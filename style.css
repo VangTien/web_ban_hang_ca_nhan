@@ -389,12 +389,12 @@
 
 /* Nút Microsoft Office */
 .product-item:first-child .product-header-button .button-text {
-  font-size: 2.2em; /* chữ to rõ ràng */
+  font-size: clamp(2em, 5vw, 3em); /* chữ to, co giãn theo màn hình */
 }
 
 /* Nút Locket Gold */
 .product-item:nth-child(2) .product-header-button .button-text {
-  font-size: 2.2em; /* chữ to rõ ràng */
+  font-size: clamp(2em, 5vw, 3em); /* chữ to, co giãn theo màn hình */
 }
 
 .check-list-item {
